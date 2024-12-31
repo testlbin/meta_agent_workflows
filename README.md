@@ -21,7 +21,42 @@ To start SGLang, run the following command:
 python -m sglang.launch_server --model-path path/to/your/model/Llama-3.1-8B-Instruct --port 30000
 ```
 
+### Meta-Workflow
 
 
-# Code Upload Plan
-We need to finalize and organize the code by December 30, 2024. The code will be uploaded on this date.
+To extract the trajectory from ToolBench data, place the ToolBench data in the `data` folder and then run the following command:
+
+```bash
+python planning_prompt.py ./data/to/toolbench ./data/to/extract_trajectories.json
+```
+
+
+To extract the tool api information:
+```bash
+python white_list_api.py
+```
+
+Inference Planning Data:
+
+```bash
+python framework/planning.py \
+--prompts_file data/to/extract_trajectories.json \
+--responses_file data/to/responses_extract_trajectories.json \
+--output_file data/to/query.json
+```
+
+Workflow Generation:
+
+```bash
+python framework/inference.py \
+--input_file data/to/planning.json \
+--output_file data/to/workflow.json \
+--tool_root_dir 'data/toolenv/tools' \
+--sgl_url http://127.0.0.1:30000
+```
+
+
+## Retrieval
+
+building...
+
