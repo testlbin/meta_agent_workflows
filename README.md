@@ -27,13 +27,13 @@ python -m sglang.launch_server --model-path path/to/your/model/Llama-3.1-8B-Inst
 To extract the trajectory from ToolBench data, place the ToolBench data in the `data` folder and then run the following command:
 
 ```bash
-python planning_prompt.py ./data/to/toolbench ./data/to/extract_trajectories.json
+python framework/planning_prompt.py ./data/to/toolbench ./data/to/extract_trajectories.json
 ```
 
 
 To extract the tool api information:
 ```bash
-python white_list_api.py
+python framework/white_list_api.py
 ```
 
 Inference Planning Data:
