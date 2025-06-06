@@ -78,7 +78,7 @@ python framework/retrival.py \
     --query_file retrieve/query.txt \
     --corpus_tsv retrieve/corpus.tsv \
     --model_path ToolBench/ToolBench_IR_bert_based_uncased \
-    --output_file retrieve/retrieval_top5.tsv \
+    --output_file retrieve/retrieval_top10.tsv \
     --top_k 10
 ```
 
